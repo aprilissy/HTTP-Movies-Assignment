@@ -34,3 +34,4 @@ const UpdateMovieForm = () => {
   )
 
 }
+export default UpdateMovieForm
