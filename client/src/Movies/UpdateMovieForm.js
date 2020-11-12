@@ -2,7 +2,7 @@ import React, { useState, useEffect, useRef,  } from "react";
 import { useParams, useHistory } from "react-router-dom";
 import axios from "axios";
 
-const UpdateMovieForm = (props) => {
+const UpdateMovieForm = () => {
   
   const initialForm = {
     title: '',
