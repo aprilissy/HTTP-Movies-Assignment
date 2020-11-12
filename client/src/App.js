@@ -1,5 +1,5 @@
 import React, { useState } from "react";
-import { Route } from "react-router-dom";
+import { Route, useHistory } from "react-router-dom";
 import SavedList from "./Movies/SavedList";
 import MovieList from "./Movies/MovieList";
 import Movie from "./Movies/Movie";
@@ -8,6 +8,7 @@ import AddMovie from './Movies/AddMovie'
 
 const App = () => {
   const [savedList, setSavedList] = useState([]);
+  const { push } = useHistory();
 
   const addToSavedList = movie => {
     setSavedList([...savedList, movie]);
@@ -17,6 +18,7 @@ const App = () => {
     <>
       <SavedList list={savedList} />
 
+      <button className='add-button button' onClick={() => {push(`/add-movie`)}} >Add A Movie</button>
       <Route exact path="/">
         <MovieList />
       </Route>
